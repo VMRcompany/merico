@@ -22,7 +22,7 @@ html {
 }
 
 .nav-link:hover {
-  color: #c5a059;
+  color: #1a1a1a;
 }
 
 .social-icon {
@@ -32,8 +32,38 @@ html {
 }
 
 .social-icon:hover {
-  color: #c5a059;
+  color: #1a1a1a;
   transform: translateY(-1px);
+}
+
+.btn-max {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1e332a;
+  color: #fdfbf7;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #1e332a;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-max:hover {
+  background: #1a1a1a;
+  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.25);
+}
+
+.btn-max-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.35rem;
+  background: #c5a059;
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 800;
 }
 
 .btn-gold {
