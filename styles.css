@@ -37,7 +37,6 @@ html {
 }
 
 .btn-max {
-  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: #1e332a;
