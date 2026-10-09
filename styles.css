@@ -26,14 +26,23 @@ html {
 }
 
 .social-icon {
-  color: #1e332a;
-  padding: 0.35rem;
-  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
 }
 
 .social-icon:hover {
-  color: #1a1a1a;
   transform: translateY(-1px);
+  opacity: 0.85;
 }
 
 .btn-gold {
