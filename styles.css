@@ -172,6 +172,60 @@ html {
   border: 1px solid rgba(197, 160, 89, 0.35);
 }
 
+.modal-panel-wide {
+  width: min(100%, 42rem);
+}
+
+.legal-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #1e332a;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.legal-link:hover {
+  color: #c5a059;
+}
+
+.legal-doc {
+  color: rgba(30, 51, 42, 0.82);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.legal-doc h3 {
+  margin-top: 1.15rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: #1e332a;
+}
+
+.legal-doc p,
+.legal-doc ul {
+  margin-top: 0.55rem;
+}
+
+.legal-doc ul {
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.legal-doc a {
+  text-decoration: underline;
+}
+
+.legal-meta {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(30, 51, 42, 0.55);
+}
+
 .modal-close {
   position: absolute;
   right: 0.75rem;

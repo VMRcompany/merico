@@ -38,7 +38,9 @@
   }
 
   document.querySelectorAll("[data-open-modal]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
       openModal(btn.getAttribute("data-open-modal"), btn.getAttribute("data-tariff"));
     });
   });
