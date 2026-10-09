@@ -73,6 +73,7 @@ html {
   letter-spacing: 0.02em;
   padding: 0.75rem 1.25rem;
   border: 1px solid #c5a059;
+  border-radius: 0.75rem;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -95,6 +96,7 @@ html {
   font-size: 0.9rem;
   padding: 0.75rem 1.25rem;
   border: 1px solid #1e332a;
+  border-radius: 0.75rem;
   transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 
