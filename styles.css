@@ -253,6 +253,17 @@ html {
   font-size: 0.85rem;
 }
 
+.cookie-banner .legal-link {
+  color: #1565c0;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.cookie-banner .legal-link:hover {
+  color: #0d47a1;
+}
+
 .cookie-banner.hidden {
   display: none;
 }
