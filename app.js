@@ -3,16 +3,20 @@
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (menuToggle && mobileMenu) {
+    function setMenuOpen(open) {
+      menuToggle.classList.toggle("is-open", open);
+      mobileMenu.classList.toggle("is-open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+    }
+
     menuToggle.addEventListener("click", function () {
-      const open = !mobileMenu.classList.contains("hidden");
-      mobileMenu.classList.toggle("hidden", open);
-      menuToggle.setAttribute("aria-expanded", String(!open));
+      setMenuOpen(!menuToggle.classList.contains("is-open"));
     });
 
     mobileMenu.querySelectorAll("a, button").forEach(function (el) {
       el.addEventListener("click", function () {
-        mobileMenu.classList.add("hidden");
-        menuToggle.setAttribute("aria-expanded", "false");
+        setMenuOpen(false);
       });
     });
   }
