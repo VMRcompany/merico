@@ -182,27 +182,29 @@
     cookieBanner.classList.add("hidden");
   });
 
-  const luxToggle = document.getElementById("lux-details-toggle");
-  const luxDetails = document.getElementById("lux-details");
-  if (luxToggle && luxDetails) {
-    luxDetails.classList.add("hidden");
-    luxDetails.classList.remove("is-open");
-    luxToggle.classList.remove("is-open");
-    luxToggle.setAttribute("aria-expanded", "false");
+  document.querySelectorAll(".lux-card-more").forEach(function (toggle) {
+    const details = document.getElementById(toggle.getAttribute("aria-controls"));
+    if (!details) {
+      return;
+    }
+    details.classList.add("hidden");
+    details.classList.remove("is-open");
+    toggle.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
 
-    luxToggle.addEventListener("click", function (event) {
+    toggle.addEventListener("click", function (event) {
       event.preventDefault();
       event.stopPropagation();
-      const open = luxToggle.getAttribute("aria-expanded") !== "true";
-      luxToggle.classList.toggle("is-open", open);
-      luxToggle.setAttribute("aria-expanded", String(open));
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      toggle.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
       if (open) {
-        luxDetails.classList.remove("hidden");
-        luxDetails.classList.add("is-open");
+        details.classList.remove("hidden");
+        details.classList.add("is-open");
       } else {
-        luxDetails.classList.remove("is-open");
-        luxDetails.classList.add("hidden");
+        details.classList.remove("is-open");
+        details.classList.add("hidden");
       }
     });
-  }
+  });
 })();
