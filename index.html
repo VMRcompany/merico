@@ -199,13 +199,41 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl sm:text-4xl text-center">Услуги</h2>
         <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-          <article class="bg-white border border-gold/40 p-0 flex flex-col">
+          <article class="bg-white border border-forest/10 flex flex-col">
             <!-- ТУТ БУДЕТ ФОТО ДЛЯ ТАРИФА ЛЮКС -->
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Генеральная уборка Люкс All Inclusive в премиальной квартире Москвы" title="Тариф Люкс — генеральная уборка All Inclusive" width="1200" height="800" class="w-full h-48 object-cover">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Генеральная уборка Люкс в премиальной квартире Москвы" title="Генеральная уборка Люкс" width="1200" height="800" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl">Генеральная уборка Люкс (All Inclusive) — 24 900 руб.</h3>
-              <p class="mt-3 text-sm text-forest/75 flex-1">Включено всё: окна с 2 сторон, техника изнутри, шкафы и гардеробные, люстры, эко-химия, расширенная бригада с менеджером качества.</p>
-              <button type="button" class="btn-gold mt-5 justify-center" data-open-modal="tariff-modal" data-tariff="Генеральная уборка Люкс (All Inclusive) — 24 900 руб.">Заказать тариф</button>
+              <h3 class="font-serif text-xl">Генеральная уборка Люкс</h3>
+              <p class="mt-3 text-sm text-forest/75">Формат тарифа: Готовый пакет максимальной комплектации. Все популярные профильные услуги объединены в единую программу.</p>
+              <button type="button" id="lux-details-toggle" class="lux-card-more mt-4" aria-expanded="false" aria-controls="lux-details">Подробнее о тарифе <span class="lux-card-more-v" aria-hidden="true">v</span></button>
+              <div id="lux-details" class="lux-card-details">
+                <div class="lux-card-details-inner">
+                  <p class="lux-card-details-title">Что уже объединено в тарифе Люкс:</p>
+                  <ul class="lux-card-details-list">
+                    <li>Сезонная мойка окон: остекление с двух сторон, рамы, створки, подоконники, водоотливы и откосы.</li>
+                    <li>Очистка бытовой техники изнутри: духовой шкаф, микроволновая печь, холодильник, вытяжка и посудомоечная машина.</li>
+                    <li>Мебель и кухонный гарнитур изнутри: мытье внутренних полок, ящиков и секций хранения.</li>
+                    <li>Гардеробные комнаты: полное обеспыливание полок, вешалочных систем, обувных зон и зеркал.</li>
+                    <li>Сложные осветительные приборы: сухая и влажная чистка многоярусных люстр, хрусталя и подвесных светильников.</li>
+                  </ul>
+                  <p class="lux-card-details-title">Базовый цикл генеральной уборки:</p>
+                  <ul class="lux-card-details-list">
+                    <li>Обеспыливание стен, потолков, карнизов, ниш подсветки и радиаторов отопления.</li>
+                    <li>Мойка дверей, фурнитуры, розеток, выключателей и плинтусов.</li>
+                    <li>Глубокое обезжиривание рабочей зоны кухни, фартука и варочной панели.</li>
+                    <li>Удаление известкового налета и дезинфекция всей сантехники в санузлах.</li>
+                    <li>Паровая обработка плиточных швов и труднодоступных стыков.</li>
+                    <li>Финишная влажная уборка напольных покрытий.</li>
+                  </ul>
+                  <p class="lux-card-details-title">Организация работы на объекте:</p>
+                  <ul class="lux-card-details-list">
+                    <li>Расширенный состав бригады для сокращения времени выполнения.</li>
+                    <li>Сопровождение менеджером качества для сдачи объекта по расширенному чек-листу.</li>
+                    <li>Профессиональный комплект оборудования, инвентаря и узкопрофильных средств под любые типы поверхностей.</li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" class="btn-gold mt-5 justify-center mt-auto" data-open-modal="tariff-modal" data-tariff="Генеральная уборка Люкс">Заказать тариф</button>
             </div>
           </article>
           <article class="bg-white border border-forest/10 flex flex-col">
