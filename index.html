@@ -199,14 +199,41 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl sm:text-4xl text-center">Услуги</h2>
         <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-          <article class="bg-white border border-gold/40 p-0 flex flex-col">
-            <!-- ТУТ БУДЕТ ФОТО ДЛЯ ТАРИФА ЛЮКС -->
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Генеральная уборка Люкс All Inclusive в премиальной квартире Москвы" title="Тариф Люкс — генеральная уборка All Inclusive" width="1200" height="800" class="w-full h-48 object-cover">
-            <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl">Генеральная уборка Люкс (All Inclusive) — 24 900 руб.</h3>
-              <p class="mt-3 text-sm text-forest/75 flex-1">Включено всё: окна с 2 сторон, техника изнутри, шкафы и гардеробные, люстры, эко-химия, расширенная бригада с менеджером качества.</p>
-              <button type="button" class="btn-gold mt-5 justify-center" data-open-modal="tariff-modal" data-tariff="Генеральная уборка Люкс (All Inclusive) — 24 900 руб.">Заказать тариф</button>
+          <article class="tariff-lux md:col-span-2 xl:col-span-3 bg-gold text-graphite p-6 sm:p-8 lg:p-10 flex flex-col">
+            <h3 class="font-serif text-2xl sm:text-3xl text-graphite">Генеральная уборка Люкс</h3>
+            <p class="mt-4 text-base sm:text-lg leading-relaxed text-graphite">Формат тарифа: Готовый пакет максимальной комплектации. Все популярные профильные услуги объединены в единую программу.</p>
+            <button type="button" id="lux-details-toggle" class="lux-details-toggle mt-6" aria-expanded="false" aria-controls="lux-details">
+              <span>Подробнее о тарифе</span>
+              <svg class="lux-details-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div id="lux-details" class="lux-details">
+              <div class="lux-details-inner">
+                <h4 class="font-serif text-lg sm:text-xl text-graphite mt-6">Что уже объединено в тарифе Люкс:</h4>
+                <ul class="mt-3 space-y-2.5">
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Сезонная мойка окон: остекление с двух сторон, рамы, створки, подоконники, водоотливы и откосы.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Очистка бытовой техники изнутри: духовой шкаф, микроволновая печь, холодильник, вытяжка и посудомоечная машина.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Мебель и кухонный гарнитур изнутри: мытье внутренних полок, ящиков и секций хранения.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Гардеробные комнаты: полное обеспыливание полок, вешалочных систем, обувных зон и зеркал.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Сложные осветительные приборы: сухая и влажная чистка многоярусных люстр, хрусталя и подвесных светильников.</span></li>
+                </ul>
+                <h4 class="font-serif text-lg sm:text-xl text-graphite mt-7">Базовый цикл генеральной уборки (также входит в программу):</h4>
+                <ul class="mt-3 space-y-2.5">
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Обеспыливание стен, потолков, карнизов, ниш подсветки и радиаторов отопления.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Мойка дверей, фурнитуры, розеток, выключателей и плинтусов.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Глубокое обезжиривание рабочей зоны кухни, фартука и варочной панели.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Удаление водного камня, известкового налета и дезинфекция всей сантехники в санузлах.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Паровая обработка плиточных швов и труднодоступных стыков.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Финишная влажная уборка напольных покрытий.</span></li>
+                </ul>
+                <h4 class="font-serif text-lg sm:text-xl text-graphite mt-7">Организация работы на объекте:</h4>
+                <ul class="mt-3 space-y-2.5">
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Расширенный состав бригады для сокращения времени выполнения полного объема.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Сопровождение менеджером качества для сдачи объекта по расширенному чек-листу.</span></li>
+                  <li class="flex gap-2.5 items-start"><svg class="mt-[0.35em] w-[0.95em] h-[0.95em] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 12.6 9.4 17.1 19.2 6.9"/></svg><span>Профессиональный комплект оборудования, инвентаря и узкопрофильных средств под любые типы поверхностей.</span></li>
+                </ul>
+              </div>
             </div>
+            <button type="button" class="btn-gold mt-8 justify-center w-full sm:w-auto" data-open-modal="tariff-modal" data-tariff="Генеральная уборка Люкс">Заказать тариф</button>
           </article>
           <article class="bg-white border border-forest/10 flex flex-col">
             <!-- ТУТ БУДЕТ ФОТО ДЛЯ ТАРИФА ГЕНЕРАЛЬНАЯ УБОРКА -->

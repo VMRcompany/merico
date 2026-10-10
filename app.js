@@ -181,4 +181,14 @@
     localStorage.setItem(cookieKey, "1");
     cookieBanner.classList.add("hidden");
   });
+
+  const luxToggle = document.getElementById("lux-details-toggle");
+  const luxDetails = document.getElementById("lux-details");
+  if (luxToggle && luxDetails) {
+    luxToggle.addEventListener("click", function () {
+      const open = luxToggle.classList.toggle("is-open");
+      luxDetails.classList.toggle("is-open", open);
+      luxToggle.setAttribute("aria-expanded", String(open));
+    });
+  }
 })();
