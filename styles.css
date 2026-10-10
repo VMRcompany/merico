@@ -373,9 +373,11 @@ html {
 }
 
 .lux-card-more {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  align-self: stretch;
+  box-sizing: border-box;
   width: 100%;
   background: #ffffff;
   color: #1a1a1a;
