@@ -399,17 +399,21 @@ html {
 }
 
 .lux-card-details {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s ease;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.lux-card-details.is-open {
+  display: block;
+  max-height: 1600px;
+  opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
 .lux-card-details-inner {
   overflow: hidden;
-}
-
-.lux-card-details.is-open {
-  grid-template-rows: 1fr;
 }
 
 .lux-card-details-title {

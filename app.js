@@ -185,10 +185,24 @@
   const luxToggle = document.getElementById("lux-details-toggle");
   const luxDetails = document.getElementById("lux-details");
   if (luxToggle && luxDetails) {
-    luxToggle.addEventListener("click", function () {
-      const open = luxToggle.classList.toggle("is-open");
-      luxDetails.classList.toggle("is-open", open);
+    luxDetails.classList.add("hidden");
+    luxDetails.classList.remove("is-open");
+    luxToggle.classList.remove("is-open");
+    luxToggle.setAttribute("aria-expanded", "false");
+
+    luxToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const open = luxToggle.getAttribute("aria-expanded") !== "true";
+      luxToggle.classList.toggle("is-open", open);
       luxToggle.setAttribute("aria-expanded", String(open));
+      if (open) {
+        luxDetails.classList.remove("hidden");
+        luxDetails.classList.add("is-open");
+      } else {
+        luxDetails.classList.remove("is-open");
+        luxDetails.classList.add("hidden");
+      }
     });
   }
 })();
