@@ -532,35 +532,12 @@
           border-bottom-color: #eeffde;
           border-right: 0;
         }
-        #reviews-chat .tg-card {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          align-items: stretch;
-          gap: 0.75rem;
-          width: 100%;
-        }
-        #reviews-chat .tg-phone-col {
-          flex: 0 0 36%;
-          max-width: 240px;
-          min-width: 0;
-          display: flex;
-        }
         #reviews-chat .tg-phone {
           width: 100%;
-          height: auto;
+          max-width: 380px;
           aspect-ratio: 9 / 19.5;
-          margin: 0;
-        }
-        #reviews-chat .tg-photo {
-          flex: 1 1 64%;
-          min-width: 0;
-          width: 64%;
-          height: auto;
-          min-height: 100%;
-          object-fit: cover;
-          border-radius: 1rem;
-          align-self: stretch;
+          margin-left: auto;
+          margin-right: auto;
         }
         #reviews-chat .tg-thread {
           min-height: 0;
@@ -568,86 +545,80 @@
         }
         #reviews-chat .tg-in,
         #reviews-chat .tg-out {
-          overflow-wrap: anywhere;
-          word-break: break-word;
+          overflow-wrap: break-word;
+          word-break: normal;
         }
       </style>
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl sm:text-4xl text-center">Первые впечатления клиентов сразу после завершения клининга</h2>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <article class="tg-card">
-            <div class="tg-phone-col">
-              <div class="tg-phone bg-black rounded-[2.4rem] p-[6px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 justify-items-center">
+          <article class="w-full max-w-[380px]">
+            <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
                 <div class="h-full rounded-[1.95rem] overflow-hidden flex flex-col bg-[#efe7dd]">
                   <div class="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/5 shrink-0">
                     <svg class="w-5 h-5 text-[#3390ec] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 19 8 12l7-7"/></svg>
                     <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Елена" title="Елена" width="40" height="40" class="w-9 h-9 rounded-full object-cover shrink-0">
                     <div class="min-w-0">
-                      <p class="text-[11px] font-semibold text-graphite leading-tight">Елена</p>
-                      <p class="text-[9px] text-[#4dcd5b] leading-tight">в сети</p>
+                      <p class="text-sm font-semibold text-graphite leading-tight">Елена</p>
+                      <p class="text-xs text-[#4dcd5b] leading-tight">в сети</p>
                     </div>
                   </div>
-                  <div class="tg-thread flex-1 p-2 space-y-2">
+                  <div class="tg-thread flex-1 p-3 space-y-2">
                     <div class="flex justify-end">
-                      <div class="tg-out relative max-w-[86%] rounded-2xl rounded-br-sm bg-[#eeffde] px-2 py-1.5 shadow-sm">
-                        <p class="text-[11px] leading-tight text-graphite">Елена, здравствуйте! Команда завершила уборку в ЖК 'Сердце Столицы' 🌟 Расскажите, как Вам результат? Будем очень рады, если оцените нашу работу!</p>
+                      <div class="tg-out relative max-w-[92%] rounded-2xl rounded-br-sm bg-[#eeffde] px-3 py-2 shadow-sm">
+                        <p class="text-sm leading-snug text-graphite">Елена, здравствуйте! Команда завершила уборку в ЖК 'Сердце Столицы' 🌟 Расскажите, как Вам результат? Будем очень рады, если оцените нашу работу!</p>
                         <p class="mt-1 flex items-center justify-end gap-0.5 text-[10px] text-[#6a9a7a]">19:20 <svg class="w-3.5 h-3.5 text-[#4fc3f7]" viewBox="0 0 16 11" aria-hidden="true"><path fill="currentColor" d="M11.1 1.1 5.6 6.6 4 5 2.9 6.1 5.6 8.8 12.2 2.2z"/><path fill="currentColor" d="M15.1 1.1 9.6 6.6 8.8 5.8 7.7 6.9 9.6 8.8 16.2 2.2z"/></svg></p>
                       </div>
                     </div>
                     <div class="flex justify-start">
-                      <div class="tg-in relative max-w-[86%] rounded-2xl rounded-bl-sm bg-white px-2 py-1.5 shadow-sm">
-                        <p class="text-[11px] leading-tight text-graphite">Девочки, спасибо вам огромное! 🙏 Мы только что зашли — это какое-то чудо! После строителей отмыть так плитку и хрустальные люстры... Всё просто сияет! Теперь мы точно ваши постоянные клиенты! ❤️</p>
+                      <div class="tg-in relative max-w-[92%] rounded-2xl rounded-bl-sm bg-white px-3 py-2 shadow-sm">
+                        <p class="text-sm leading-snug text-graphite">Девочки, спасибо вам огромное! 🙏 Мы только что зашли — это какое-то чудо! После строителей отмыть так плитку и хрустальные люстры... Всё просто сияет! Теперь мы точно ваши постоянные клиенты! ❤️</p>
                         <p class="mt-1 text-right text-[10px] text-gray-400">19:25</p>
                       </div>
                     </div>
                     <div class="flex justify-end">
-                      <div class="tg-out relative max-w-[86%] rounded-2xl rounded-br-sm bg-[#eeffde] px-2 py-1.5 shadow-sm">
-                        <p class="text-[11px] leading-tight text-graphite">Елена, спасибо за такие теплые слова! Передала девочкам, они очень старались. 🥰 Всегда рады позаботиться о чистоте Вашего дома. До новых встреч!</p>
+                      <div class="tg-out relative max-w-[92%] rounded-2xl rounded-br-sm bg-[#eeffde] px-3 py-2 shadow-sm">
+                        <p class="text-sm leading-snug text-graphite">Елена, спасибо за такие теплые слова! Передала девочкам, они очень старались. 🥰 Всегда рады позаботиться о чистоте Вашего дома. До новых встреч!</p>
                         <p class="mt-1 flex items-center justify-end gap-0.5 text-[10px] text-[#6a9a7a]">19:27 <svg class="w-3.5 h-3.5 text-[#4fc3f7]" viewBox="0 0 16 11" aria-hidden="true"><path fill="currentColor" d="M11.1 1.1 5.6 6.6 4 5 2.9 6.1 5.6 8.8 12.2 2.2z"/><path fill="currentColor" d="M15.1 1.1 9.6 6.6 8.8 5.8 7.7 6.9 9.6 8.8 16.2 2.2z"/></svg></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80" alt="Результат уборки в квартире Елены, ЖК Сердце Столицы" title="Результат работы Мерико — чистый интерьер" width="1200" height="900" class="tg-photo">
           </article>
-          <article class="tg-card">
-            <div class="tg-phone-col">
-              <div class="tg-phone bg-black rounded-[2.4rem] p-[6px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
+          <article class="w-full max-w-[380px]">
+            <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
                 <div class="h-full rounded-[1.95rem] overflow-hidden flex flex-col bg-[#efe7dd]">
                   <div class="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/5 shrink-0">
                     <svg class="w-5 h-5 text-[#3390ec] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 19 8 12l7-7"/></svg>
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Андрей" title="Андрей" width="40" height="40" class="w-9 h-9 rounded-full object-cover shrink-0">
                     <div class="min-w-0">
-                      <p class="text-[11px] font-semibold text-graphite leading-tight">Андрей</p>
-                      <p class="text-[9px] text-[#4dcd5b] leading-tight">в сети</p>
+                      <p class="text-sm font-semibold text-graphite leading-tight">Андрей</p>
+                      <p class="text-xs text-[#4dcd5b] leading-tight">в сети</p>
                     </div>
                   </div>
-                  <div class="tg-thread flex-1 p-2 space-y-2">
+                  <div class="tg-thread flex-1 p-3 space-y-2">
                     <div class="flex justify-end">
-                      <div class="tg-out relative max-w-[86%] rounded-2xl rounded-br-sm bg-[#eeffde] px-2 py-1.5 shadow-sm">
-                        <p class="text-[11px] leading-tight text-graphite">Андрей, здравствуйте! Бригада завершила послестроительный клининг Вашего дома. Будем очень рады, если поделитесь своими впечатлениями и оцените качество нашей работы! 🤝</p>
+                      <div class="tg-out relative max-w-[92%] rounded-2xl rounded-br-sm bg-[#eeffde] px-3 py-2 shadow-sm">
+                        <p class="text-sm leading-snug text-graphite">Андрей, здравствуйте! Бригада завершила послестроительный клининг Вашего дома. Будем очень рады, если поделитесь своими впечатлениями и оцените качество нашей работы! 🤝</p>
                         <p class="mt-1 flex items-center justify-end gap-0.5 text-[10px] text-[#6a9a7a]">14:10 <svg class="w-3.5 h-3.5 text-[#4fc3f7]" viewBox="0 0 16 11" aria-hidden="true"><path fill="currentColor" d="M11.1 1.1 5.6 6.6 4 5 2.9 6.1 5.6 8.8 12.2 2.2z"/><path fill="currentColor" d="M15.1 1.1 9.6 6.6 8.8 5.8 7.7 6.9 9.6 8.8 16.2 2.2z"/></svg></p>
                       </div>
                     </div>
                     <div class="flex justify-start">
-                      <div class="tg-in relative max-w-[86%] rounded-2xl rounded-bl-sm bg-white px-2 py-1.5 shadow-sm">
-                        <p class="text-[11px] leading-tight text-graphite">Принимал сегодня работу у девочек из Мерико после ремонта. Честно скажу — я перфекционист и очень переживал за дорогой паркет, но тут даже придраться было не к чему. Девчонки просто умницы, вычистили пыль даже изнутри радиаторов и откосов. Отдельный респект менеджеру качества за проверку по расширенному чек-листу. Спасибо за такой сервис, уровень действительно премиальный! 👍</p>
+                      <div class="tg-in relative max-w-[92%] rounded-2xl rounded-bl-sm bg-white px-3 py-2 shadow-sm">
+                        <p class="text-sm leading-snug text-graphite">Принимал сегодня работу у девочек из Мерико после ремонта. Честно скажу — я перфекционист и очень переживал за дорогой паркет, но тут даже придраться было не к чему. Девчонки просто умницы, вычистили пыль даже изнутри радиаторов и откосов. Отдельный респект менеджеру качества за проверку по расширенному чек-листу. Спасибо за такой сервис, уровень действительно премиальный! 👍</p>
                         <p class="mt-1 text-right text-[10px] text-gray-400">14:32</p>
                       </div>
                     </div>
                     <div class="flex justify-end">
-                      <div class="tg-out relative max-w-[86%] rounded-2xl rounded-br-sm bg-[#eeffde] px-2 py-1.5 shadow-sm">
-                        <p class="text-[11px] leading-tight text-graphite">Андрей, спасибо за доверие и высокую оценку! Для нас огромная гордость ухаживать за такими красивыми интерьерами. Рады, что оправдали ожидания перфекциониста! С удовольствием приедем к Вам снова. С уважением, команда Мерико. 🌟</p>
+                      <div class="tg-out relative max-w-[92%] rounded-2xl rounded-br-sm bg-[#eeffde] px-3 py-2 shadow-sm">
+                        <p class="text-sm leading-snug text-graphite">Андрей, спасибо за доверие и высокую оценку! Для нас огромная гордость ухаживать за такими красивыми интерьерами. Рады, что оправдали ожидания перфекциониста! С удовольствием приедем к Вам снова. С уважением, команда Мерико. 🌟</p>
                         <p class="mt-1 flex items-center justify-end gap-0.5 text-[10px] text-[#6a9a7a]">14:35 <svg class="w-3.5 h-3.5 text-[#4fc3f7]" viewBox="0 0 16 11" aria-hidden="true"><path fill="currentColor" d="M11.1 1.1 5.6 6.6 4 5 2.9 6.1 5.6 8.8 12.2 2.2z"/><path fill="currentColor" d="M15.1 1.1 9.6 6.6 8.8 5.8 7.7 6.9 9.6 8.8 16.2 2.2z"/></svg></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80" alt="Результат уборки после ремонта в Хамовниках" title="Уборка после ремонта — результат Мерико" width="1200" height="900" class="tg-photo">
           </article>
         </div>
       </div>
