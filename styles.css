@@ -467,8 +467,10 @@ html {
 
 .eco-card-photo-wrap {
   flex-shrink: 0;
-  height: 12rem;
+  height: 370px;
   overflow: hidden;
+  border-top-left-radius: 0.125rem;
+  border-top-right-radius: 0.125rem;
 }
 
 .eco-card-photo {
