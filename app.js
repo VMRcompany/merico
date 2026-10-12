@@ -152,21 +152,6 @@
     }
   }
 
-  const otherWrap = document.getElementById("quiz-other-wrap");
-  const otherInput = document.getElementById("quiz-other-input");
-
-  function syncCleaningTypeOther() {
-    const isOther = quizForm.cleaningType.value === "Другое";
-    otherWrap.classList.toggle("is-open", isOther);
-    if (!isOther) {
-      otherInput.value = "";
-    }
-  }
-
-  quizForm.querySelectorAll('input[name="cleaningType"]').forEach(function (radio) {
-    radio.addEventListener("change", syncCleaningTypeOther);
-  });
-
   quizForm.querySelectorAll("[data-quiz-next]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       if (quizStep === 1 && !quizForm.cleaningType.value) {

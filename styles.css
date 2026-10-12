@@ -446,21 +446,3 @@ html {
   border-bottom: 1.4px solid #1a1a1a;
   transform: rotate(-45deg);
 }
-
-.quiz-other-wrap {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  margin-top: 0;
-  transition: grid-template-rows 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
-}
-
-.quiz-other-inner {
-  overflow: hidden;
-}
-
-.quiz-other-wrap.is-open {
-  grid-template-rows: 1fr;
-  opacity: 1;
-  margin-top: 0.75rem;
-}
