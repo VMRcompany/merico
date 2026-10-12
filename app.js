@@ -238,7 +238,7 @@
     function cardStep() {
       const slide = slides[0];
       const gap = parseFloat(window.getComputedStyle(chatSlider).gap) || 0;
-      return slide ? slide.getBoundingClientRect().width + gap : 350;
+      return slide ? slide.getBoundingClientRect().width + gap : 360;
     }
 
     const nextBtn = document.getElementById("reviews-chat-next");
@@ -265,9 +265,7 @@
     if (prevBtn) {
       prevBtn.addEventListener("click", function (event) {
         event.preventDefault();
-        if (prevBtn.classList.contains("is-disabled")) {
-          return;
-        }
+        event.stopPropagation();
         chatSlider.scrollBy({ left: -cardStep(), behavior: "smooth" });
       });
     }
