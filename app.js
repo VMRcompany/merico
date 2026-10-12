@@ -237,15 +237,12 @@
 
     const nextBtn = document.getElementById("reviews-chat-next");
     if (nextBtn) {
-      nextBtn.addEventListener("click", function () {
-        const step = window.matchMedia("(min-width: 1024px)").matches ? 3 : 1;
-        const current = activeSlideIndex();
-        const next = current + step >= slides.length ? 0 : Math.min(slides.length - 1, current + step);
-        slides[next].scrollIntoView({
-          behavior: "smooth",
-          inline: next === 0 ? "start" : "start",
-          block: "nearest"
-        });
+      nextBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        const slide = slides[0];
+        const gap = parseFloat(window.getComputedStyle(chatSlider).gap) || 0;
+        const amount = slide ? slide.getBoundingClientRect().width + gap : 350;
+        chatSlider.scrollBy({ left: amount, behavior: "smooth" });
       });
     }
   }
