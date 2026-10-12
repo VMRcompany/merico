@@ -446,3 +446,8 @@ html {
   border-bottom: 1.4px solid #1a1a1a;
   transform: rotate(-45deg);
 }
+
+.about-staff-photo {
+  object-fit: cover;
+  object-position: center 15%;
+}
