@@ -458,7 +458,20 @@ html {
   object-position: center 20%;
 }
 
+.eco-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.eco-card-photo-wrap {
+  flex-shrink: 0;
+  height: 12rem;
+  overflow: hidden;
+}
+
 .eco-card-photo {
+  display: block;
+  position: static;
   width: 100%;
   height: 100%;
   object-fit: cover;
