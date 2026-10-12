@@ -142,14 +142,6 @@
     }
     document.getElementById("quiz-progress").style.width = String(step * 25) + "%";
     document.getElementById("quiz-step-label").textContent = String(step);
-    if (step === 4) {
-      const type = quizForm.cleaningType.value;
-      const extras = Array.from(quizForm.querySelectorAll('input[name="extras"]:checked')).length;
-      const base = { Генеральная: 9900, Люкс: 24900, "После ремонта": 14900, Эко: 9900 }[type] || 9900;
-      const total = base + extras * 1000;
-      document.getElementById("quiz-estimate").textContent =
-        "Ориентир стоимости: от " + total.toLocaleString("ru-RU") + " руб.";
-    }
   }
 
   quizForm.querySelectorAll("[data-quiz-next]").forEach(function (btn) {
