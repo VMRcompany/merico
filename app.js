@@ -262,21 +262,24 @@
         chatSlider.scrollBy({ left: cardStep(), behavior: "smooth" });
       });
     }
-    if (prevBtn) {
-      prevBtn.style.position = "relative";
-      prevBtn.style.zIndex = "5";
-      prevBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        const x = chatSlider.scrollLeft;
-        let target = 0;
-        slides.forEach(function (slide) {
-          if (slide.offsetLeft < x - 4) {
-            target = slide.offsetLeft;
-          }
-        });
-        chatSlider.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
-      });
+  }
+
+  window.mericoChatPrev = function (event) {
+    if (event) {
+      event.preventDefault();
     }
+    var slider = document.getElementById("reviews-chat-slider");
+    if (!slider) {
+      return;
+    }
+    var slide = slider.querySelector(".reviews-chat-slide");
+    var gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
+    var amount = slide ? slide.getBoundingClientRect().width + gap : 360;
+    slider.scrollBy({ left: -amount, behavior: "smooth" });
+  };
+
+  var prevArrow = document.getElementById("reviews-chat-prev");
+  if (prevArrow) {
+    prevArrow.onclick = window.mericoChatPrev;
   }
 })();
