@@ -263,10 +263,19 @@
       });
     }
     if (prevBtn) {
+      prevBtn.style.position = "relative";
+      prevBtn.style.zIndex = "5";
       prevBtn.addEventListener("click", function (event) {
         event.preventDefault();
         event.stopPropagation();
-        chatSlider.scrollBy({ left: -cardStep(), behavior: "smooth" });
+        const x = chatSlider.scrollLeft;
+        let target = 0;
+        slides.forEach(function (slide) {
+          if (slide.offsetLeft < x - 4) {
+            target = slide.offsetLeft;
+          }
+        });
+        chatSlider.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
       });
     }
   }
