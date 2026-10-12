@@ -199,4 +199,40 @@
       }
     });
   });
+
+  const chatSlider = document.getElementById("reviews-chat-slider");
+  const chatDots = document.getElementById("reviews-chat-dots");
+  if (chatSlider && chatDots) {
+    const slides = chatSlider.querySelectorAll(".reviews-chat-slide");
+    const dots = chatDots.querySelectorAll(".reviews-chat-dot");
+
+    function activeSlideIndex() {
+      const center = chatSlider.scrollLeft + chatSlider.clientWidth / 2;
+      let best = 0;
+      let bestDist = Infinity;
+      slides.forEach(function (slide, index) {
+        const mid = slide.offsetLeft + slide.offsetWidth / 2;
+        const dist = Math.abs(mid - center);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = index;
+        }
+      });
+      return best;
+    }
+
+    function syncChatDots() {
+      const active = activeSlideIndex();
+      dots.forEach(function (dot, index) {
+        dot.classList.toggle("is-active", index === active);
+      });
+    }
+
+    chatSlider.addEventListener("scroll", syncChatDots, { passive: true });
+    dots.forEach(function (dot, index) {
+      dot.addEventListener("click", function () {
+        slides[index].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      });
+    });
+  }
 })();

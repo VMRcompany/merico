@@ -549,11 +549,48 @@
           overflow-wrap: break-word;
           word-break: normal;
         }
+        #reviews-chat .reviews-chat-slider {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          gap: 1.5rem;
+          padding: 0.25rem max(1rem, calc(50% - 170px)) 0.5rem;
+        }
+        #reviews-chat .reviews-chat-slider::-webkit-scrollbar {
+          display: none;
+        }
+        #reviews-chat .reviews-chat-slide {
+          scroll-snap-align: center;
+          flex-shrink: 0;
+          width: min(340px, 85vw);
+        }
+        #reviews-chat .reviews-chat-dots {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 1.25rem;
+        }
+        #reviews-chat .reviews-chat-dot {
+          width: 0.5rem;
+          height: 0.5rem;
+          padding: 0;
+          border: 0;
+          border-radius: 999px;
+          background: rgba(30, 51, 42, 0.22);
+          cursor: pointer;
+        }
+        #reviews-chat .reviews-chat-dot.is-active {
+          background: #c5a059;
+        }
       </style>
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl sm:text-4xl text-center">Первые впечатления клиентов сразу после завершения клининга</h2>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 justify-items-center">
-          <article class="w-full max-w-[340px]">
+        <div class="reviews-chat-slider mt-12" id="reviews-chat-slider">
+          <article class="reviews-chat-slide">
             <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
                 <div class="h-full rounded-[1.95rem] overflow-hidden flex flex-col bg-[#efe7dd]">
                   <div class="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/5 shrink-0">
@@ -587,7 +624,7 @@
                 </div>
               </div>
           </article>
-          <article class="w-full max-w-[340px]">
+          <article class="reviews-chat-slide">
             <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
                 <div class="h-full rounded-[1.95rem] overflow-hidden flex flex-col bg-[#efe7dd]">
                   <div class="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/5 shrink-0">
@@ -621,7 +658,7 @@
                 </div>
               </div>
           </article>
-          <article class="w-full max-w-[340px]">
+          <article class="reviews-chat-slide">
             <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
                 <div class="h-full rounded-[1.95rem] overflow-hidden flex flex-col bg-[#efe7dd]">
                   <div class="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/5 shrink-0">
@@ -655,7 +692,7 @@
                 </div>
               </div>
           </article>
-          <article class="w-full max-w-[340px]">
+          <article class="reviews-chat-slide">
             <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">
                 <div class="h-full rounded-[1.95rem] overflow-hidden flex flex-col bg-[#efe7dd]">
                   <div class="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/5 shrink-0">
@@ -689,6 +726,12 @@
                 </div>
               </div>
           </article>
+        </div>
+        <div class="reviews-chat-dots" id="reviews-chat-dots" role="tablist" aria-label="Отзывы">
+          <button type="button" class="reviews-chat-dot is-active" aria-label="Отзыв 1"></button>
+          <button type="button" class="reviews-chat-dot" aria-label="Отзыв 2"></button>
+          <button type="button" class="reviews-chat-dot" aria-label="Отзыв 3"></button>
+          <button type="button" class="reviews-chat-dot" aria-label="Отзыв 4"></button>
         </div>
       </div>
     </section>
