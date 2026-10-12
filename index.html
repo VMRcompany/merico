@@ -574,7 +574,8 @@
           flex-shrink: 0;
           width: 100%;
         }
-        #reviews-chat .reviews-chat-next {
+        #reviews-chat .reviews-chat-next,
+        #reviews-chat .reviews-chat-prev {
           display: none;
           flex-shrink: 0;
           width: 2.75rem;
@@ -586,11 +587,17 @@
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          transition: border-color 0.25s ease, color 0.25s ease;
+          transition: border-color 0.25s ease, color 0.25s ease, opacity 0.25s ease;
         }
-        #reviews-chat .reviews-chat-next:hover {
+        #reviews-chat .reviews-chat-next:hover,
+        #reviews-chat .reviews-chat-prev:hover {
           border-color: #c5a059;
           color: #c5a059;
+        }
+        #reviews-chat .reviews-chat-prev.is-disabled {
+          opacity: 0.35;
+          pointer-events: none;
+          cursor: default;
         }
         @media (min-width: 1024px) {
           #reviews-chat .reviews-chat-slide {
@@ -600,7 +607,8 @@
           #reviews-chat .reviews-chat-slider {
             gap: 5%;
           }
-          #reviews-chat .reviews-chat-next {
+          #reviews-chat .reviews-chat-next,
+          #reviews-chat .reviews-chat-prev {
             display: inline-flex;
           }
         }
@@ -627,6 +635,9 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 class="font-serif text-3xl sm:text-4xl text-center">Первые впечатления клиентов сразу после завершения клининга</h2>
         <div class="reviews-chat-row mt-12">
+        <button type="button" class="reviews-chat-prev is-disabled" id="reviews-chat-prev" aria-label="Предыдущие отзывы" aria-disabled="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
         <div class="reviews-chat-slider" id="reviews-chat-slider">
           <article class="reviews-chat-slide">
             <div class="tg-phone bg-black rounded-[2.4rem] p-[8px] shadow-[0_18px_40px_rgba(26,26,26,0.16)]">

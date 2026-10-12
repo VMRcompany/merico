@@ -235,14 +235,40 @@
       });
     });
 
+    function cardStep() {
+      const slide = slides[0];
+      const gap = parseFloat(window.getComputedStyle(chatSlider).gap) || 0;
+      return slide ? slide.getBoundingClientRect().width + gap : 350;
+    }
+
     const nextBtn = document.getElementById("reviews-chat-next");
+    const prevBtn = document.getElementById("reviews-chat-prev");
+
+    function syncChatArrows() {
+      if (!prevBtn) {
+        return;
+      }
+      const atStart = chatSlider.scrollLeft <= 8;
+      prevBtn.classList.toggle("is-disabled", atStart);
+      prevBtn.setAttribute("aria-disabled", String(atStart));
+    }
+
+    chatSlider.addEventListener("scroll", syncChatArrows, { passive: true });
+    syncChatArrows();
+
     if (nextBtn) {
       nextBtn.addEventListener("click", function (event) {
         event.preventDefault();
-        const slide = slides[0];
-        const gap = parseFloat(window.getComputedStyle(chatSlider).gap) || 0;
-        const amount = slide ? slide.getBoundingClientRect().width + gap : 350;
-        chatSlider.scrollBy({ left: amount, behavior: "smooth" });
+        chatSlider.scrollBy({ left: cardStep(), behavior: "smooth" });
+      });
+    }
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (prevBtn.classList.contains("is-disabled")) {
+          return;
+        }
+        chatSlider.scrollBy({ left: -cardStep(), behavior: "smooth" });
       });
     }
   }
