@@ -273,13 +273,30 @@
       return;
     }
     var slide = slider.querySelector(".reviews-chat-slide");
-    var gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
+    var gap = parseFloat(window.getComputedStyle(slider).columnGap || window.getComputedStyle(slider).gap) || 0;
     var amount = slide ? slide.getBoundingClientRect().width + gap : 360;
-    slider.scrollBy({ left: -amount, behavior: "smooth" });
+    slider.scrollTo({ left: Math.max(0, slider.scrollLeft - amount), behavior: "smooth" });
   };
 
   var prevArrow = document.getElementById("reviews-chat-prev");
+  var chatRow = document.querySelector("#reviews-chat .reviews-chat-row");
   if (prevArrow) {
     prevArrow.onclick = window.mericoChatPrev;
+  }
+  if (chatRow && prevArrow) {
+    chatRow.addEventListener("click", function (event) {
+      if (prevArrow.contains(event.target)) {
+        return;
+      }
+      var box = prevArrow.getBoundingClientRect();
+      if (
+        event.clientX >= box.left &&
+        event.clientX <= box.right &&
+        event.clientY >= box.top &&
+        event.clientY <= box.bottom
+      ) {
+        window.mericoChatPrev(event);
+      }
+    }, true);
   }
 })();
