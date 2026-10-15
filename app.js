@@ -31,8 +31,17 @@
     const error = form.querySelector("[data-error]");
     const consent = form.querySelector(".js-consent");
     const submit = form.querySelector('button[type="submit"]');
+    const title = document.getElementById("tariff-title");
+    const subtitle = document.getElementById("tariff-subtitle");
+    if (title) {
+      title.textContent = "Заказать тариф";
+    }
+    if (subtitle) {
+      subtitle.classList.remove("hidden");
+    }
     if (success) {
       success.classList.add("hidden");
+      success.textContent = "Спасибо. Заявка на тариф принята. Наш менеджер свяжется с вами в ближайшее время.";
     }
     if (error) {
       error.classList.add("hidden");
@@ -54,7 +63,15 @@
     document.body.style.overflow = "hidden";
     if (id === "tariff-modal") {
       resetTariffForm();
-      if (tariff) {
+      if (tariff === "Зафиксировать условия") {
+        document.getElementById("tariff-title").textContent = "Зафиксировать условия";
+        document.getElementById("tariff-subtitle").classList.add("hidden");
+        const success = document.querySelector("#tariff-modal [data-success]");
+        if (success) {
+          success.textContent = "Спасибо. Заявка принята. Наш менеджер свяжется с вами в ближайшее время.";
+        }
+        document.getElementById("tariff-input").value = tariff;
+      } else if (tariff) {
         document.getElementById("tariff-name").textContent = tariff;
         document.getElementById("tariff-input").value = tariff;
       }
