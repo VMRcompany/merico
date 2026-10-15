@@ -203,6 +203,18 @@ html {
   border-color: #c5a059;
 }
 
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+form[data-source="Заказ тарифа"]:has([data-success]:not(.hidden)) .tariff-form-fields {
+  display: none;
+}
+
 .consent {
   display: flex;
   gap: 0.6rem;

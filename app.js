@@ -112,6 +112,26 @@
 
   document.querySelectorAll(".js-lead-form, #quiz-form").forEach(bindConsent);
 
+  function isHoneypotFilled(form) {
+    const trap = form.querySelector('input[name="user_web_url"]');
+    return Boolean(trap && trap.value.trim());
+  }
+
+  function showLeadSuccess(form) {
+    const success = form.querySelector("[data-success]");
+    const submit = form.querySelector('button[type="submit"]');
+    if (success) {
+      success.classList.remove("hidden");
+    }
+    if (submit) {
+      submit.disabled = true;
+    }
+  }
+
+  function sendLead(form) {
+    showLeadSuccess(form);
+  }
+
   function handleLeadSubmit(form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -120,13 +140,16 @@
       const success = form.querySelector("[data-success]");
       error.classList.add("hidden");
       success.classList.add("hidden");
+      if (isHoneypotFilled(form)) {
+        showLeadSuccess(form);
+        return;
+      }
       if (!phone || !isPhoneValid(phone.value)) {
         error.textContent = "Укажите корректный номер телефона.";
         error.classList.remove("hidden");
         return;
       }
-      success.classList.remove("hidden");
-      form.querySelector('button[type="submit"]').disabled = true;
+      sendLead(form);
     });
   }
 
