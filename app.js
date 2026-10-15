@@ -165,6 +165,17 @@
   }
 
   function showLeadSuccess(form) {
+    if (form.id === "quiz-form") {
+      const live = document.querySelector("#quiz .quiz-live");
+      const done = document.querySelector("#quiz .quiz-complete");
+      if (live) {
+        live.classList.add("hidden");
+      }
+      if (done) {
+        done.classList.remove("hidden");
+      }
+      return;
+    }
     const success = form.querySelector("[data-success]");
     const submit = form.querySelector('button[type="submit"]');
     if (success) {
