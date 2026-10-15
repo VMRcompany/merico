@@ -21,6 +21,30 @@
     });
   }
 
+  function resetTariffForm() {
+    const form = document.querySelector("#tariff-modal .js-lead-form");
+    if (!form) {
+      return;
+    }
+    form.reset();
+    const success = form.querySelector("[data-success]");
+    const error = form.querySelector("[data-error]");
+    const consent = form.querySelector(".js-consent");
+    const submit = form.querySelector('button[type="submit"]');
+    if (success) {
+      success.classList.add("hidden");
+    }
+    if (error) {
+      error.classList.add("hidden");
+    }
+    if (consent) {
+      consent.checked = false;
+    }
+    if (submit) {
+      submit.disabled = true;
+    }
+  }
+
   function openModal(id, tariff) {
     const modal = document.getElementById(id);
     if (!modal) {
@@ -28,13 +52,19 @@
     }
     modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
-    if (id === "tariff-modal" && tariff) {
-      document.getElementById("tariff-name").textContent = tariff;
-      document.getElementById("tariff-input").value = tariff;
+    if (id === "tariff-modal") {
+      resetTariffForm();
+      if (tariff) {
+        document.getElementById("tariff-name").textContent = tariff;
+        document.getElementById("tariff-input").value = tariff;
+      }
     }
   }
 
   function closeModal(modal) {
+    if (modal.id === "tariff-modal") {
+      resetTariffForm();
+    }
     modal.classList.add("hidden");
     if (!document.querySelector(".modal:not(.hidden)")) {
       document.body.style.overflow = "";
